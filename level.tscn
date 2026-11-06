@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://cl64e04hn8qsn"]
+
+[ext_resource type="PackedScene" uid="uid://cc5r8u42x856g" path="res://meteor.tscn" id="1_oi3di"]
+[ext_resource type="Texture2D" uid="uid://cqlw36dpaspjp" path="res://SpaceShooterRedux/Backgrounds/blue.png" id="1_u52ul"]
+[ext_resource type="PackedScene" uid="uid://dlpepciio623v" path="res://player.tscn" id="2_vonw3"]
+
+[node name="Level" type="Node2D" unique_id=674291824]
+
+[node name="Blue" type="Sprite2D" parent="." unique_id=1711369565]
+position = Vector2(579, 321)
+scale = Vector2(4.5117188, 2.5585938)
+texture = ExtResource("1_u52ul")
+
+[node name="Player" parent="." unique_id=1543774411 instance=ExtResource("2_vonw3")]
+position = Vector2(570, 464)
+
+[node name="Meteor" parent="." unique_id=1344268812 instance=ExtResource("1_oi3di")]
+position = Vector2(567, 231)

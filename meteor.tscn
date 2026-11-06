@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://cc5r8u42x856g"]
+
+[ext_resource type="Texture2D" uid="uid://c04fbqn7s30jm" path="res://SpaceShooterRedux/PNG/Meteors/meteorBrown_med3.png" id="1_n51xl"]
+
+[node name="Meteor" type="Node2D" unique_id=1344268812]
+
+[node name="MeteorImage" type="Sprite2D" parent="." unique_id=1383661651]
+texture = ExtResource("1_n51xl")
