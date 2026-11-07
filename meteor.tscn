@@ -1,16 +1,16 @@
 [gd_scene format=3 uid="uid://cc5r8u42x856g"]
 
-[ext_resource type="Texture2D" uid="uid://c0i3terkd0nxc" path="res://SpaceShooterRedux/PNG/Meteors/meteorBrown_big1.png" id="1_n51xl"]
 [ext_resource type="Script" uid="uid://dpsxreu0s0k3o" path="res://scenes/meteor.gd" id="1_ohe0j"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6nexg"]
 
 [node name="Meteor" type="Area2D" unique_id=835730005]
 script = ExtResource("1_ohe0j")
 
 [node name="MeteorImage" type="Sprite2D" parent="." unique_id=1383661651]
-texture = ExtResource("1_n51xl")
 
-[node name="CollisionShape2D" type="CollisionPolygon2D" parent="." unique_id=493504745]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=591666360]
 position = Vector2(-3, -8)
-polygon = PackedVector2Array(-30, -33, 27, -33, 52, 6, 37, 40, 13, 36, -19, 48, -47, 17)
+shape = SubResource("CircleShape2D_6nexg")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

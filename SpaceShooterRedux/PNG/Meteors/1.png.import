@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cdj4sa65gs3xd"
-path="res://.godot/imported/meteorGrey_big4.png-629c1b1f7aad4f6833b2e91a989f5b0a.ctex"
+uid="uid://c0i3terkd0nxc"
+path="res://.godot/imported/1.png-8058de4a22b5c1fa571c5904b2e4e995.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://SpaceShooterRedux/PNG/Meteors/meteorGrey_big4.png"
-dest_files=["res://.godot/imported/meteorGrey_big4.png-629c1b1f7aad4f6833b2e91a989f5b0a.ctex"]
+source_file="res://SpaceShooterRedux/PNG/Meteors/1.png"
+dest_files=["res://.godot/imported/1.png-8058de4a22b5c1fa571c5904b2e4e995.ctex"]
 
 [params]
 
