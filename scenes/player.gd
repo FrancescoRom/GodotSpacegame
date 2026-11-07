@@ -1,21 +1,16 @@
-extends Node2D
+extends CharacterBody2D
 
+@export var speed: int = 500
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	position = Vector2(100, 500)
+	position = Vector2(650, 500)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if Input.is_action_pressed("ui_right"):
-		position += Vector2(1,0) * 5
+	var direction = Input.get_vector("left", "right", "up", "down")
+	velocity = direction * speed
+	move_and_slide()
 	
-	if Input.is_action_pressed("ui_left"):
-		position += Vector2(-1,0) * 5
-		
-	if Input.is_action_pressed("ui_up"):
-		position += Vector2(0,-1) * 5
-		
-	if Input.is_action_pressed("ui_down"):
-		position += Vector2(0,1) * 5
+	
