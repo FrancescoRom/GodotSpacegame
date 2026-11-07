@@ -23,10 +23,12 @@ texture = ExtResource("1_u52ul")
 
 [node name="Player" parent="." unique_id=1543774411 instance=ExtResource("2_vonw3")]
 position = Vector2(644, 520)
+speed = 500
 
 [node name="Borders" type="Node2D" parent="." unique_id=1607345417]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Borders" unique_id=1345743444]
+collision_layer = 4
 
 [node name="RightWall" type="CollisionShape2D" parent="Borders/StaticBody2D" unique_id=409622812]
 position = Vector2(1291, 360)
@@ -37,6 +39,7 @@ position = Vector2(-11, 359)
 shape = SubResource("RectangleShape2D_6nexg")
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="Borders" unique_id=2073960102]
+collision_layer = 4
 
 [node name="BottomWall" type="CollisionShape2D" parent="Borders/StaticBody2D2" unique_id=2146774662]
 position = Vector2(642.25, 730)
@@ -52,4 +55,7 @@ autostart = true
 
 [node name="Meteors" type="Node2D" parent="." unique_id=94286204]
 
+[node name="Lasers" type="Node2D" parent="." unique_id=902170224]
+
+[connection signal="laser" from="Player" to="." method="_on_player_laser"]
 [connection signal="timeout" from="MeteorTimer" to="." method="_on_meteor_timer_timeout"]

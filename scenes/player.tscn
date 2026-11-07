@@ -1,9 +1,10 @@
 [gd_scene format=3 uid="uid://dlpepciio623v"]
 
 [ext_resource type="Texture2D" uid="uid://sk304mdh16j5" path="res://SpaceShooterRedux/PNG/playerShip1_blue.png" id="1_4flbx"]
-[ext_resource type="Script" uid="uid://dyx3f38lfrh8r" path="res://scenes/player.gd" id="1_onrkg"]
+[ext_resource type="Script" uid="uid://dyx3f38lfrh8r" path="res://scripts/player.gd" id="1_onrkg"]
 
 [node name="Player" type="CharacterBody2D" unique_id=1969054748]
+collision_mask = 6
 script = ExtResource("1_onrkg")
 
 [node name="PlayerImage" type="Sprite2D" parent="." unique_id=1783676117]
@@ -12,3 +13,12 @@ texture = ExtResource("1_4flbx")
 [node name="CollisionShape2D" type="CollisionPolygon2D" parent="." unique_id=1345742907]
 position = Vector2(2, 9)
 polygon = PackedVector2Array(5, -47, 10, -20, 34, -7, 38, -9, 43, -15, 46, -14, 48, -11, 44, 16, 41, 15, 39, 12, 34, 15, 12, 18, 6, 29, -10, 28, -16, 18, -39, 14, -44, 11, -44, 15, -48, 15, -51, -14, -48, -16, -45, -14, -44, -9, -38, -7, -14, -21, -10, -47)
+
+[node name="LaserStartPos" type="Marker2D" parent="." unique_id=1762842196]
+position = Vector2(0, -63)
+
+[node name="LaserTimer" type="Timer" parent="." unique_id=460543623]
+wait_time = 0.4
+one_shot = true
+
+[connection signal="timeout" from="LaserTimer" to="." method="_on_laser_timer_timeout"]
