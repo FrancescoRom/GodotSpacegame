@@ -4,6 +4,8 @@ var speed: int
 var rotation_speed: int
 var direction_x: float
 
+signal collision
+
 func _ready() -> void:
 	var rng := RandomNumberGenerator.new()
 	
@@ -34,5 +36,10 @@ func _process(delta: float) -> void:
 	
 	
 func _on_body_entered(body: Node2D) -> void:
-	if body.name == "Player":
-		print("Player hit")
+	collision.emit()
+
+
+func _on_area_entered(area: Area2D) -> void:
+	area.queue_free()
+	queue_free()
+	Global.score += 1
