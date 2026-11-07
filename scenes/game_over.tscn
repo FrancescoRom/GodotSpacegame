@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cqlw36dpaspjp" path="res://SpaceShooterRedux/Backgrounds/blue.png" id="1_xeevv"]
 [ext_resource type="PackedScene" uid="uid://cl64e04hn8qsn" path="res://scenes/level.tscn" id="2_racf3"]
 [ext_resource type="FontFile" uid="uid://bders7gs1e3fj" path="res://SpaceShooterRedux/Bonus/kenvector_future.ttf" id="2_wqhvx"]
+[ext_resource type="AudioStream" uid="uid://b04svhq3e1jsu" path="res://SpaceShooterRedux/Bonus/gameoversound.wav" id="5_7m3ot"]
 
 [node name="GameOver" type="Control" unique_id=183284109]
 layout_mode = 3
@@ -67,3 +68,6 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("2_wqhvx")
 theme_override_font_sizes/font_size = 24
 text = "Press space to restart"
+
+[node name="GameOverSound" type="AudioStreamPlayer2D" parent="." unique_id=1013822494]
+stream = ExtResource("5_7m3ot")

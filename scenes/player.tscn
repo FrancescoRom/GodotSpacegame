@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://sk304mdh16j5" path="res://SpaceShooterRedux/PNG/playerShip1_blue.png" id="1_4flbx"]
 [ext_resource type="Script" uid="uid://dyx3f38lfrh8r" path="res://scripts/player.gd" id="1_onrkg"]
+[ext_resource type="AudioStream" uid="uid://dtsll1helk8wt" path="res://SpaceShooterRedux/Bonus/sfx_laser2.ogg" id="3_qhqgy"]
 
 [node name="Player" type="CharacterBody2D" unique_id=1969054748]
 collision_mask = 6
@@ -20,5 +21,10 @@ position = Vector2(0, -63)
 [node name="LaserTimer" type="Timer" parent="." unique_id=460543623]
 wait_time = 0.4
 one_shot = true
+
+[node name="LaserSound" type="AudioStreamPlayer2D" parent="." unique_id=1052768837]
+stream = ExtResource("3_qhqgy")
+volume_db = -10.0
+pitch_scale = 0.83
 
 [connection signal="timeout" from="LaserTimer" to="." method="_on_laser_timer_timeout"]

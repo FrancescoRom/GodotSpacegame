@@ -37,8 +37,10 @@ func _on_meteor_timer_timeout() -> void:
 func _on_meteor_collision():
 	health -= 1
 	get_tree().call_group('ui', '_set_health', health)
+	print("player hit")
+	
 	if health <= 0:
-		get_tree().change_scene_to_file("res://scenes/game_over.tscn")
+		get_tree().change_scene_to_file.call_deferred("res://scenes/game_over.tscn")
 
 func _on_player_laser(pos) -> void:
 	var laser = laser_scene.instantiate()

@@ -9,3 +9,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	position.y -= speed * delta 
+
+	if global_position.y < -100:
+		queue_free()
+		print("laser removed")

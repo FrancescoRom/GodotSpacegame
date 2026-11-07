@@ -34,12 +34,27 @@ func _process(delta: float) -> void:
 	position += Vector2(direction_x, 1.0) * speed * delta
 	rotation_degrees += rotation_speed * delta
 	
+	var screen_size = get_viewport_rect().size
+	var margin = 100
 	
-func _on_body_entered(body: Node2D) -> void:
+	if global_position.y > screen_size.y + margin \
+	or global_position.x < -margin \
+	or global_position.x > screen_size.x + margin:
+		queue_free()
+		print("meteor removed")
+	
+func _on_body_entered(_body: Node2D) -> void:
 	collision.emit()
 
 
 func _on_area_entered(area: Area2D) -> void:
 	area.queue_free()
-	queue_free()
 	Global.score += 1
+	
+	$CollisionShape2D.set_deferred("disabled", true)
+	$MeteorImage.hide()
+	
+	$MeteorBoom.play()
+	await $MeteorBoom.finished
+	
+	queue_free()

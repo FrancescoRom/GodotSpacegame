@@ -4,6 +4,7 @@ extends Control
 
 func _ready() -> void:
 	$CenterContainer/VBoxContainer/Label2.text = $CenterContainer/VBoxContainer/Label2.text + str(Global.score)
+	$GameOverSound.play()
 	
 func _input(event):
 	if event.is_action_pressed("shoot"):
