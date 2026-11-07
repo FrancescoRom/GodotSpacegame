@@ -35,6 +35,7 @@ func _on_meteor_timer_timeout() -> void:
 	meteor.connect('collision', _on_meteor_collision)
 	
 func _on_meteor_collision():
+	$PlayerHit.play()
 	health -= 1
 	get_tree().call_group('ui', '_set_health', health)
 	print("player hit")

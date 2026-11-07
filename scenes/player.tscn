@@ -4,16 +4,45 @@
 [ext_resource type="Script" uid="uid://dyx3f38lfrh8r" path="res://scripts/player.gd" id="1_onrkg"]
 [ext_resource type="AudioStream" uid="uid://dtsll1helk8wt" path="res://SpaceShooterRedux/Bonus/sfx_laser2.ogg" id="3_qhqgy"]
 
+[sub_resource type="CurveTexture" id="CurveTexture_smehm"]
+
+[sub_resource type="Gradient" id="Gradient_qhqgy"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_dqkch"]
+gradient = SubResource("Gradient_qhqgy")
+
+[sub_resource type="CurveTexture" id="CurveTexture_ur7pv"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_qlg0r"]
+particle_flag_disable_z = true
+emission_shape = 1
+emission_sphere_radius = 13.44
+gravity = Vector3(0, 50, 0)
+scale_max = 14.509999
+color = Color(0.909601, 0.3884621, 1.540184e-06, 1)
+color_ramp = SubResource("GradientTexture1D_dqkch")
+alpha_curve = SubResource("CurveTexture_smehm")
+emission_curve = SubResource("CurveTexture_ur7pv")
+anim_speed_max = 10.84
+
 [node name="Player" type="CharacterBody2D" unique_id=1969054748]
 collision_mask = 6
 script = ExtResource("1_onrkg")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="." unique_id=840953355]
+position = Vector2(0, 49)
+amount = 20
+lifetime = 0.09999999999999999
+process_material = SubResource("ParticleProcessMaterial_qlg0r")
 
 [node name="PlayerImage" type="Sprite2D" parent="." unique_id=1783676117]
 texture = ExtResource("1_4flbx")
 
 [node name="CollisionShape2D" type="CollisionPolygon2D" parent="." unique_id=1345742907]
-position = Vector2(2, 9)
+position = Vector2(3, 9)
 polygon = PackedVector2Array(5, -47, 10, -20, 34, -7, 38, -9, 43, -15, 46, -14, 48, -11, 44, 16, 41, 15, 39, 12, 34, 15, 12, 18, 6, 29, -10, 28, -16, 18, -39, 14, -44, 11, -44, 15, -48, 15, -51, -14, -48, -16, -45, -14, -44, -9, -38, -7, -14, -21, -10, -47)
+metadata/_edit_lock_ = true
 
 [node name="LaserStartPos" type="Marker2D" parent="." unique_id=1762842196]
 position = Vector2(0, -63)

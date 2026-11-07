@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://s0e7uiuvhjaq" path="res://SpaceShooterRedux/PNG/Effects/star2.png" id="5_klq6b"]
 [ext_resource type="Texture2D" uid="uid://bum401eklgs43" path="res://SpaceShooterRedux/PNG/Effects/star3.png" id="6_b121j"]
 [ext_resource type="PackedScene" uid="uid://oct7emxedxig" path="res://scenes/ui.tscn" id="7_klq6b"]
+[ext_resource type="AudioStream" uid="uid://b6j85abr28hum" path="res://SpaceShooterRedux/Bonus/sfx_zap.ogg" id="8_b121j"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_6nexg"]
 animations = [{
@@ -172,6 +173,11 @@ metadata/_edit_lock_ = true
 metadata/_edit_lock_ = true
 
 [node name="UI" parent="." unique_id=530307997 instance=ExtResource("7_klq6b")]
+
+[node name="PlayerHit" type="AudioStreamPlayer2D" parent="." unique_id=1690923084]
+stream = ExtResource("8_b121j")
+volume_db = -12.0
+pitch_scale = 0.5
 
 [connection signal="laser" from="Player" to="." method="_on_player_laser"]
 [connection signal="timeout" from="MeteorTimer" to="." method="_on_meteor_timer_timeout"]
