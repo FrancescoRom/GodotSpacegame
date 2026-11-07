@@ -2,7 +2,7 @@ extends Node2D
 
 
 # load the scene
-var meteor_scene: PackedScene = load ("res://meteor.tscn")
+var meteor_scene: PackedScene = load ("res://scenes/meteor.tscn")
 
 func _on_meteor_timer_timeout() -> void:
 

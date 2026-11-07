@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 @export var speed: int = 500
-var laser_scene: PackedScene = load ("res://laser.tscn")
+var laser_scene: PackedScene = load ("res://scenes/laser.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
