@@ -8,5 +8,6 @@ func _ready() -> void:
 	
 func _input(event):
 	if event.is_action_pressed("shoot"):
+		Global.score = 0
 		get_tree().change_scene_to_packed(level_scene)
 	
