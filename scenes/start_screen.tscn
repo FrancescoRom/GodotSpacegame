@@ -3,7 +3,14 @@
 [ext_resource type="Texture2D" uid="uid://0111go8px00s" path="res://SpaceShooterRedux/Backgrounds/black.png" id="1_o7i0r"]
 [ext_resource type="Script" uid="uid://cbthhbtjct5ce" path="res://scripts/start_screen.gd" id="1_r2jwc"]
 [ext_resource type="PackedScene" uid="uid://dlpepciio623v" path="res://scenes/player.tscn" id="2_he1sj"]
+[ext_resource type="Texture2D" uid="uid://b7a23dpo8tn1b" path="res://SpaceShooterRedux/PNG/Lasers/laserRed01.png" id="3_ecdxc"]
 [ext_resource type="FontFile" uid="uid://bders7gs1e3fj" path="res://SpaceShooterRedux/Bonus/kenvector_future.ttf" id="3_he1sj"]
+[ext_resource type="Texture2D" uid="uid://c0i3terkd0nxc" path="res://SpaceShooterRedux/PNG/Meteors/1.png" id="4_qls88"]
+[ext_resource type="Texture2D" uid="uid://djj5n8q57eld4" path="res://SpaceShooterRedux/PNG/Meteors/5.png" id="5_pcj7n"]
+[ext_resource type="Texture2D" uid="uid://cctgf5drtvoik" path="res://SpaceShooterRedux/PNG/Meteors/3.png" id="6_bdg0b"]
+[ext_resource type="Texture2D" uid="uid://e8ugsbk3msod" path="res://SpaceShooterRedux/PNG/Meteors/4.png" id="7_xfy2r"]
+[ext_resource type="Texture2D" uid="uid://cn25qfklov5cu" path="res://SpaceShooterRedux/PNG/Meteors/2.png" id="8_lt4el"]
+[ext_resource type="AudioStream" uid="uid://cerj3bo1mta3q" path="res://SpaceShooterRedux/Bonus/introsound.wav" id="11_qls88"]
 
 [node name="start_screen" type="Control" unique_id=2080413581]
 layout_mode = 3
@@ -20,19 +27,63 @@ scale = Vector2(5.0195313, 2.828125)
 texture = ExtResource("1_o7i0r")
 metadata/_edit_lock_ = true
 
+[node name="Node2D" type="Node2D" parent="." unique_id=303476345]
+
+[node name="LaserRed01" type="Sprite2D" parent="Node2D" unique_id=358130084]
+position = Vector2(305.00003, 470.00003)
+rotation = 0.27401668
+scale = Vector2(0.99999994, 0.99999994)
+texture = ExtResource("3_ecdxc")
+
+[node name="LaserRed02" type="Sprite2D" parent="Node2D" unique_id=1616101907]
+position = Vector2(961, 221)
+texture = ExtResource("3_ecdxc")
+
+[node name="LaserRed03" type="Sprite2D" parent="Node2D" unique_id=895047690]
+position = Vector2(398, 149)
+texture = ExtResource("3_ecdxc")
+
+[node name="LaserRed04" type="Sprite2D" parent="Node2D" unique_id=1901621979]
+position = Vector2(664, 57)
+texture = ExtResource("3_ecdxc")
+
+[node name="LaserRed05" type="Sprite2D" parent="Node2D" unique_id=780601359]
+position = Vector2(1003, 482)
+rotation = -0.27401668
+scale = Vector2(0.99999994, 0.99999994)
+texture = ExtResource("3_ecdxc")
+
+[node name="1" type="Sprite2D" parent="Node2D" unique_id=1243854323]
+position = Vector2(259.5, 170)
+texture = ExtResource("4_qls88")
+
+[node name="5" type="Sprite2D" parent="Node2D" unique_id=1046459422]
+position = Vector2(1087, 260)
+texture = ExtResource("5_pcj7n")
+
+[node name="3" type="Sprite2D" parent="Node2D" unique_id=4436561]
+position = Vector2(964, 108)
+texture = ExtResource("6_bdg0b")
+
+[node name="4" type="Sprite2D" parent="Node2D" unique_id=1178051672]
+position = Vector2(754, 192)
+texture = ExtResource("7_xfy2r")
+
+[node name="2" type="Sprite2D" parent="Node2D" unique_id=1880378652]
+position = Vector2(476, 302)
+texture = ExtResource("8_lt4el")
+
 [node name="Player" parent="." unique_id=1969054748 instance=ExtResource("2_he1sj")]
-position = Vector2(235, 556)
-rotation = 0.47945067
+position = Vector2(272.99997, 582.00006)
+rotation = 0.27401668
 scale = Vector2(1.8086064, 1.7349567)
-skew = 0.5431851
-metadata/_edit_lock_ = true
+script = null
 
 [node name="Player2" parent="." unique_id=1045624204 instance=ExtResource("2_he1sj")]
-position = Vector2(1056, 563.00006)
-rotation = -0.3385146
+position = Vector2(1032, 584.9999)
+rotation = -0.27401668
 scale = Vector2(1.9631187, 1.5579785)
-skew = -0.49854636
-metadata/_edit_lock_ = true
+script = null
 
 [node name="CenterContainer" type="CenterContainer" parent="." unique_id=1489031871]
 layout_mode = 1
@@ -66,3 +117,6 @@ theme_override_fonts/font = ExtResource("3_he1sj")
 theme_override_font_sizes/font_size = 22
 text = "Press space to start your journey"
 horizontal_alignment = 1
+
+[node name="IntroSound" type="AudioStreamPlayer2D" parent="." unique_id=1943120549]
+stream = ExtResource("11_qls88")

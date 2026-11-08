@@ -67,7 +67,7 @@ theme_override_constants/margin_bottom = 20
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_wqhvx")
 theme_override_font_sizes/font_size = 24
-text = "Press space to restart"
+text = "Press space to go to start screen"
 
 [node name="GameOverSound" type="AudioStreamPlayer2D" parent="." unique_id=1013822494]
 stream = ExtResource("5_7m3ot")

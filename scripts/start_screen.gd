@@ -1,9 +1,10 @@
 extends Control
 
-@export var level_scene: PackedScene
+var level_scene: PackedScene = load ("res://scenes/level.tscn")
 
 func _ready() -> void:
 	Global.score = 0
+	$IntroSound.play()
 
 
 func _input(event):
