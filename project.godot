@@ -10,10 +10,10 @@ config_version=5
 
 [application]
 
-config/name="spaceinvaders"
+config/name="Space Shooter 2D"
 run/main_scene="uid://dxq5rejpbdmup"
 config/features=PackedStringArray("4.7", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="uid://sk304mdh16j5"
 
 [autoload]
 
