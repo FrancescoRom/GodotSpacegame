@@ -6,7 +6,6 @@ func _ready() -> void:
 	var tween = create_tween()
 	tween.tween_property($RedLaser, 'scale', Vector2(1, 1), 0.2).from(Vector2(0, 0))
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	position.y -= speed * delta 
 

@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://t7bpy0ln0ses"]
+
+[ext_resource type="Script" uid="uid://v6de31fmx0mh" path="res://scripts/pause_screen.gd" id="1_27awe"]
+[ext_resource type="Texture2D" uid="uid://0111go8px00s" path="res://SpaceShooterRedux/Backgrounds/black.png" id="1_gchx3"]
+[ext_resource type="FontFile" uid="uid://bders7gs1e3fj" path="res://SpaceShooterRedux/Bonus/kenvector_future.ttf" id="2_qeunj"]
+[ext_resource type="FontFile" uid="uid://bbl877t5psqle" path="res://SpaceShooterRedux/Bonus/kenvector_future_thin.ttf" id="3_27awe"]
+
+[node name="pause_screen" type="Control" unique_id=826501340]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_27awe")
+
+[node name="Black" type="Sprite2D" parent="." unique_id=803115561]
+position = Vector2(644.5, 363)
+scale = Vector2(5.0273438, 2.84375)
+texture = ExtResource("1_gchx3")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=335937459]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 40.0
+grow_horizontal = 2
+
+[node name="Label2" type="Label" parent="MarginContainer" unique_id=381537301]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.59607846, 0.7607843, 1, 1)
+theme_override_fonts/font = ExtResource("3_27awe")
+theme_override_font_sizes/font_size = 50
+text = "0"
+horizontal_alignment = 1
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=1102030652]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer" unique_id=1979995477]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CenterContainer/VBoxContainer" unique_id=38347137]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.59607846, 0.7607843, 1, 1)
+theme_override_fonts/font = ExtResource("2_qeunj")
+theme_override_font_sizes/font_size = 70
+text = "Game paused"
+horizontal_alignment = 1

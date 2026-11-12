@@ -1,7 +1,7 @@
 extends CanvasLayer
 
 static var image = load("res://SpaceShooterRedux/PNG/UI/playerLife1_blue.png")
-var time_elapsed := 0
+
 
 func _set_health(amount):
 	# remove all children

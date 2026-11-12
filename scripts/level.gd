@@ -4,8 +4,10 @@ extends Node2D
 # load the scene
 var meteor_scene: PackedScene = load ("res://scenes/meteor.tscn")
 var laser_scene: PackedScene = load ("res://scenes/laser.tscn")
+var pause_screen: PackedScene = load ("res://scenes/pause_screen.tscn")
 
 var health: int = 5
+
 
 func _ready() -> void:
 	# set up health ui
@@ -19,7 +21,7 @@ func _ready() -> void:
 		# position
 		var random_x = rng.randi_range(0, int(size.x))
 		var random_y = rng.randi_range(0, int(size.y))
-		star.position = Vector2(random_x, random_y)
+		star.position = Vector2(random_x, random_y)	
 		
 		# scale
 		var random_scale = rng.randf_range(0.5, 1.5)
@@ -28,12 +30,26 @@ func _ready() -> void:
 		# animation speed
 		star.speed_scale = rng.randf_range(0.4, 1.2)
 
+
+func _process(delta: float) -> void:
+	
+	var height = get_viewport_rect().size.y
+	
+	for star in $Stars.get_children():
+		var speed = 60.0 * star.scale.x
+		star.position.y += speed * delta
+		
+		if star.position.y  > height:
+			star.position.y = 0
+
+
 func _on_meteor_timer_timeout() -> void:
 	var meteor = meteor_scene.instantiate()
 	$Meteors.add_child(meteor)
 	
 	meteor.connect('collision', _on_meteor_collision)
-	
+
+  
 func _on_meteor_collision():
 	$PlayerHit.play()
 	health -= 1
@@ -42,6 +58,7 @@ func _on_meteor_collision():
 	
 	if health <= 0:
 		get_tree().change_scene_to_file.call_deferred("res://scenes/game_over.tscn")
+
 
 func _on_player_laser(pos) -> void:
 	var laser = laser_scene.instantiate()

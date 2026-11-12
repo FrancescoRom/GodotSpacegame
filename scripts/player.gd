@@ -6,11 +6,11 @@ var bank: float = 0.0
 signal laser(pos)
 var can_shoot: bool = true
 
-# Called when the node enters the scene tree for the first time.
+
 func _ready():
 	position = Vector2(650, 500)
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+
 func _process(delta: float) -> void:
 	var direction = Input.get_vector("left", "right", "up", "down")
 	var target_bank = direction.x

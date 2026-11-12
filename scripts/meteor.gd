@@ -37,6 +37,7 @@ func _process(delta: float) -> void:
 	var screen_size = get_viewport_rect().size
 	var margin = 100
 	
+	# meteor removing
 	if global_position.y > screen_size.y + margin \
 	or global_position.x < -margin \
 	or global_position.x > screen_size.x + margin:
